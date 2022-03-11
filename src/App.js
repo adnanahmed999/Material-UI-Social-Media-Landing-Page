@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import Leftbar from "./components/Leftbar";
+import Feed from "./components/Feed";
+import Rightbar from "./components/Rightbar";
+import Grid from "@material-ui/core/Grid";
+import Add from "./components/Add";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <Grid container>
+        <Grid item sm={2}>
+          <Leftbar />
+        </Grid>
+        <Grid item sm={7}>
+          <Feed />
+        </Grid>
+        <Grid item sm={3}>
+          <Rightbar />
+        </Grid>
+      </Grid>
+      <Add />
     </div>
   );
 }
